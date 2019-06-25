@@ -1,3 +1,6 @@
+<!--
+dd
+ -->
 <template>
   <div class="content_box_sel_div">
     <!--菜单头部-->
@@ -73,7 +76,8 @@
     </div>
   </div>
 </template>
-<script type="text/ecmascript-6">
+
+<script>
 	import mockDate from '@/common/mockDate';
     export default{
         data(){
