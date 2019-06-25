@@ -1,0 +1,44 @@
+@charset "utf-8";
+*{font-family: 微软雅黑}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio,
+video { margin: 0; padding: 0;outline: none;}
+address, cite, dfn, em, var {font-style: normal;}
+body a,input,button{outline:none;}
+img,a,a:hover,a:active{border: none;outline: none;}
+a:link,a:visited,a:hover,a:active{border: none;outline: none;text-decoration: none; color:#000}
+
+*:focus{outline: none;}
+@media screen and (-webkit-min-device-pixel-ratio:0){input,button,textarea{}}
+*,*:after,*:before{box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;-o-box-sizing: border-box;}
+
+img{vertical-align: middle;}
+a,a:hover{text-decoration: none;}
+ul,ol,dl,dt,li{list-style: none;}
+table{border-collapse: collapse;margin: 0 auto;}
+textarea{resize: none;}
+p{word-break: break-all;text-align: justify;}
+span,em,i,label{display: inline-block;}
+select {margin: 0;padding: 0;text-align: left;text-indent: 0px !important; outline: 0;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {select{ text-indent: 4px !important; }}
+/*文本两端对齐文本效果*/
+body { font-size: 100%; font-family:"Microsoft Yahei","宋体", "arial", "helvetica", "sans-serif" !important;line-height: 1 !important;}
+body,html,.cont_wraper{height: 100%;}
+/*主体结构*/
+/*sticky布局*/
+.sticky_main{padding-bottom: 60px;}
+.kiki_cont{position: absolute;left: 0;top: 150px;/*top是kiki_header的高度*/right: 0;bottom: 0;/*bottom是kiki_footer的高度*/z-index: 1;overflow-y: auto;}
+/*header*/
+.kiki_header{width: 100%;display: block;height: 80px;}
+.kiki_header_fixed{position: fixed;top: 0;left: 0;right: 0;z-index: 2;}
+
+/*统一颜色*/
+.unified_Color{
+  background: #0F95AC!important;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover{
+	 background: #0f95ac!important;
+}
