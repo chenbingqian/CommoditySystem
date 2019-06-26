@@ -19,6 +19,7 @@ import four from '@/view/business/four.vue'
 
 import baseFile from '@/view/study/baseFile.vue'
 import userInfo from '@/view/study/userInfoManger.vue'
+import codeTypeList from '@/view/business/codeTypeList.vue'
 // 2、注册
 //使用VueRouter进行路由配置重定向,可以判断出路由的去向;
 Vue.use(Router)
@@ -79,10 +80,16 @@ export default new Router({
 		    	path: '/xIndex/study/baseFile',
 		    	name: '常用操作',
 		    	component: baseFile
-		    },{
+		    },
+		    {
 		    	path: '/xIndex/study/userInfo',
 		    	name: '用户列表',
 		    	component: userInfo
+		    },
+		    {
+		    	path: '/xIndex/codetypelist',
+		    	name: '数字信息化',
+		    	component: codeTypeList
 		    }
       ]
     }

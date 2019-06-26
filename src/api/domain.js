@@ -7,7 +7,5 @@
 // 定义API版本号
 const API_VERSION = '/v1';
 
-export const OperationApi =  (process.env.NODE_ENV === 'production') ?
-	'production' : 'http://192.168.10.106:5555/operation/operation'+API_VERSION;
-export const UserInfoApi =  (process.env.NODE_ENV === 'userinfo') ?
-	'userinfo' : 'http://localhost:8099/userInfo'+API_VERSION;
+export const KikiApi =  (process.env.NODE_ENV === 'kiki') ?
+	'production' : 'http://localhost:8000/kiki'+API_VERSION;

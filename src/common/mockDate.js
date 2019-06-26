@@ -5,34 +5,32 @@
 const vheaderDate = {
 	// 菜单
 	operationMenus : [
-	            {
-	            	"routerName":null,"names":"一级菜单1","code":0,
-	              "icon":{"default":"../../static/image/other/journal.svg"},
-	              "subMenus":[
-	            		{"routerName":"/xIndex/one","name":"一级菜单1-1","code":0,"permissions":[]},
-	            		{"routerName":"/xIndex/two","name":"一级菜单1-2","code":0,"permissions":[],"index":3}
-	            	]
-	            },
-	            {
-	            	"routerName":null,"names":"一级菜单2","code":0,
-	              "icon":{"default":"../../static/image/other/journal.svg","hover":"","active":""},
-	              "subMenus":[
-	              	{"routerName":"/xIndex/three","name":"一级菜单2-1","code":0,"permissions":[],"index":4},
-	            		{"routerName":"/xIndex/four","name":"一级菜单2-2","code":0,"permissions":[],"index":5}
-	            	]
-	            },
-	            {
-	            	"routerName":null,"names":"技能模块","code":0,
-	              "icon":{"default":"../../static/image/other/journal.svg","hover":"","active":""},
-	              "subMenus":[
-	              	{"routerName":"/xIndex/study","name":"study-学习呢","code":0,"permissions":[],"index":6},
-	              	{"routerName":"/xIndex/study/baseFile","name":"study-常用操作","code":0,"permissions":[],"index":7},
-	                {"routerName":"/xIndex/study/userInfo","name":"study-用户操作","code":0,"permissions":[],"index":8}
-	              
-	            	]
-	            }
-	            
-            ]
+        {
+        	"routerName":null,"names":"信息化配置","code":0,
+          "icon":{"default":"../../static/image/other/journal.svg"},
+          "subMenus":[
+        		{"routerName":"/xIndex/codeTypeList","name":"数字信息化","code":0,"permissions":[]},
+        		{"routerName":"/xIndex/two","name":"一级菜单1-2","code":0,"permissions":[],"index":3}
+        		]
+        },
+        {
+        	"routerName":null,"names":"一级菜单2","code":0,
+          "icon":{"default":"../../static/image/other/journal.svg","hover":"","active":""},
+          "subMenus":[
+          	{"routerName":"/xIndex/three","name":"一级菜单2-1","code":0,"permissions":[],"index":4},
+        		{"routerName":"/xIndex/four","name":"一级菜单2-2","code":0,"permissions":[],"index":5}
+        	]
+        },
+        {
+        	"routerName":null,"names":"技能模块","code":0,
+          "icon":{"default":"../../static/image/other/journal.svg","hover":"","active":""},
+          "subMenus":[
+          	{"routerName":"/xIndex/study","name":"study-学习呢","code":0,"permissions":[],"index":6},
+          	{"routerName":"/xIndex/study/baseFile","name":"study-常用操作","code":0,"permissions":[],"index":7},
+            {"routerName":"/xIndex/study/userInfo","name":"study-用户操作","code":0,"permissions":[],"index":8}
+        	]
+        }
+    ]
 }
 // 数据
 const baseFileDate = {

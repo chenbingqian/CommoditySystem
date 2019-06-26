@@ -38,7 +38,7 @@ axios.interceptors.request.use((config) => {
 
 // 处理请求返回数据
 axios.interceptors.response.use((res) => {
-	console.log("返回数据："+JSON.stringify(res.headers))
+  console.log("返回数据："+JSON.stringify(res.headers))
 	// 判断是否存在token
   if(res.headers[consts.ACCESSTOKEN]) {
   		console.log("token为空，")
@@ -46,15 +46,18 @@ axios.interceptors.response.use((res) => {
   	//若存在，则进行设置token 到 cookie中
     cacheUtils.cookie.set(consts.ACCESSTOKEN, token)
   }else{
+
   	 // 模拟产生数据
   	// cacheUtils.cookie.set(consts.ACCESSTOKEN, 'aaabbb')
-  }
-  logger.log('请求结果:' + JSON.stringify(res.data));
-  
+  } 
+
+  console.log('请求结果:' + JSON.stringify(res.data));
+  res.data.error_code = res.data.result_code
   if(res.data.error_code == consts.ERROR_CODE.INSTANCE_ID_NO_ACCESS_TOKEN 
   	|| res.data.error_code == consts.ERROR_CODE.UNAUTHORIZED_ACCESS
   	|| res.data.error_code == consts.ERROR_CODE.NO_ACCESS_TOKEN 
   	|| res.data.error_code == consts.ERROR_CODE.PROGRAM_ERROR) {
+
     return Promise.reject(res.data.error_code)
   }
   // 当数据为空时，进行初始化数据，以免出现空异常
