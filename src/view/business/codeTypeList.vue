@@ -28,6 +28,7 @@
 
 <script>
 	import mockDate from '@/common/mockDate';
+	import consts from '@/common/consts';
 	import dateFormat from '@/common/dateFormat';
 	import api from 'api';
     import axios from 'common/httpUtils';
@@ -37,7 +38,6 @@
 				
 				// 复选框选中数据
 				selectionRow:[],
-				data:[],
 				// 待提交表单数据
 				info:{
 					code_type:'',
@@ -92,44 +92,7 @@
 					                   		this.deleteInfo(params.row.code_type);
 					                 	}
 					                }
-					            }, '删除'),
-					            
-					            h('Poptip', {
-						            props: {
-					                   trigger: 'click',
-					                   placement: 'bottom'
-						            }
-						        }, 
-						            [h('Button', {
-						                    props: {
-						                      type: 'warning',
-						                      size: 'small'
-						                    },
-						                    style: {
-						                      marginRight: '5px',
-						                    }
-					                	},'编辑'
-					                ),
-					                h('div', {
-					                   slot: 'content',
-					                }, [
-					                   h('ul', this.data.map(item => {
-					                     return h('li', {
-					                       style: {
-					                         textAlign: 'center',
-					                         padding: '4px',
-					                         cursor:'pointer',
-					                         borderBottom:'1px solid #cccccc'
-					                       },
-					                       on: {
-					                         click: () => {
-					                         	
-					                         }
-					                       }
-					                     }, item.name)
-					                   }))
-					                ])
-					            ])
+					            }, '删除')
 				            ]);
 				        }
 			        }
@@ -170,6 +133,10 @@
 					data:this.info
 				}).then(response => {
 					console.log(JSON.stringify(response));
+					if(response.result_code != consts.ERROR_CODE.SUCCESS){
+ 						this.$Message.error('数据字典不能重复！');
+					}
+					
 					this.getList();
 				}).catch(error => {
 					console.log(error)
@@ -187,14 +154,14 @@
             cancel () {
                 this.$Message.info('点击了取消');
             },
-            //获取用户列表信息
+            //获取列表信息
             getList(){
 	            	axios({
 	            		method: 'GET',
 	            		url: api.Api.codeTypeList
 	            	}).then(response => {
 	            		console.log(JSON.stringify(response));
-	            		this.list = response.data;
+	            		this.list = response.result_data;
 	            	}).catch(error => {
 	            		console.log(error)
 	            	})
@@ -203,7 +170,6 @@
 		created (){
 			// 获取列表
 			this.getList();
-			this.data = [{"id":1,"name":"删除"}];
 		}
 	}
 	
