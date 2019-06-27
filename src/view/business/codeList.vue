@@ -3,11 +3,17 @@
  -->
 <template>
 	<div style="padding-left: 100px;padding-right: 100px;">
-		<div style="background-color:#42B983;">
+		<div style="background-color:#42B983;" class="top_box">
 			<div class="bane_box_sel">
 				<ul>
 				 	<li>
-				 		输入数字编码类型：<Input placeholder="请输入..." class="btn-input"  v-model="info.code_type" :maxlength="20"></Input>
+				 		输入数字编码类型：
+
+				 		<Select v-model="info.code_type" class="btn-input" placeholder="选择字典类型..." >
+				 			<Option v-for="item in codeTypeList" :value="item.code_type" :key="item.code_type" >
+				 				{{item.description}}
+				 			</Option>
+				 		</Select>
 					</li>
 					<li>
 				 		输入编码名称：<Input placeholder="请输入..." class="btn-input"  v-model="info.name" :maxlength="20"></Input>
@@ -24,7 +30,7 @@
 				</ul>
 			</div>
 		</div>
-		<div style="background-color:#42B983;">
+		<div style="background-color:#42B983; " class="table_box">
 			<Table :columns="columns" :data="list" @on-select="selectRow" @on-select-all="selectRow" @on-selection-change="selectRow"></Table>
 		</div>
 	</div>
@@ -46,6 +52,8 @@
 					name:'',
 					description:''
 				},
+				// 数据字典类型集合
+				codeTypeList:[],
 				// 数据集
 				list:[],
 				columns:[
@@ -180,10 +188,22 @@
             	}).catch(error => {
             		console.log(error)
             	})
+			},
+			// 获取字典类型
+			getCodeTypeList(){
+				axios({
+					method:"GET",
+					url:api.Api.codeTypeList
+				}).then(response =>{
+					this.codeTypeList = response.result_data;
+				}).catch(error =>{
+					console.log(error)
+				});
 			}
 
 		},
 		created (){
+			this.getCodeTypeList();
 			this.getList();
 		}
 	}
@@ -192,6 +212,9 @@
 <style>
 	.btn-input{
     	width:200px;
+    }
+    .top_box{
+    	float: left;
     }
     .bane_box_sel{
     	width: 100%;
@@ -207,5 +230,10 @@
 	    float: left;
 	    line-height: 65px;
 	    padding-left: 15px;
-    }
+	}
+	.table_box {
+		width: 100%;
+		float: left;
+	}
+
 </style>

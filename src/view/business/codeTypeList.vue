@@ -115,6 +115,9 @@
 						"code_type":codeType
 					}
 				}).then(response =>{
+					if(response.result_code != consts.ERROR_CODE.SUCCESS){
+ 						this.$Message.error(response.msg);
+					}
 					this.getList();
 				}).catch(error =>{
 					console.log(error)
