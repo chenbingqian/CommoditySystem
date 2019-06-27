@@ -12,7 +12,6 @@ import xIndex from '@/view/index/operations.vue'
 import study from '@/view/doc/study.vue'
 
 
-import one from '@/view/business/one.vue'
 import two from '@/view/business/two.vue'
 import three from '@/view/business/three.vue'
 import four from '@/view/business/four.vue'
@@ -20,6 +19,8 @@ import four from '@/view/business/four.vue'
 import baseFile from '@/view/study/baseFile.vue'
 import userInfo from '@/view/study/userInfoManger.vue'
 import codeTypeList from '@/view/business/codeTypeList.vue'
+
+import codeList from '@/view/business/codeList.vue'
 // 2、注册
 //使用VueRouter进行路由配置重定向,可以判断出路由的去向;
 Vue.use(Router)
@@ -51,11 +52,6 @@ export default new Router({
       component: xIndex,
       auth: true,
       children: [
-		    {
-		    	path: 'one',
-		    	name: '标题1',
-		    	component: one
-		    },
 		    {
 		    	path: '/xIndex/two',
 		    	name: '标题2',
@@ -90,6 +86,10 @@ export default new Router({
 		    	path: '/xIndex/codetypelist',
 		    	name: '数字信息化',
 		    	component: codeTypeList
+		    },{
+		    	path: '/xIndex/codeList',
+		    	name: '数据字典',
+		    	component: codeList
 		    }
       ]
     }

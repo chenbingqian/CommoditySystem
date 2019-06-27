@@ -88,7 +88,7 @@
 					                },
 					                on: {
 					                   	click: () => {
-					                   		// 删除用户数据
+					                   		// 删除数据
 					                   		this.deleteInfo(params.row.code_type);
 					                 	}
 					                }
@@ -123,10 +123,10 @@
 			// 提交表单数据
 			addInfo(){
 				console.log("待提交的表单数据："+JSON.stringify(this.info))
-				let data = {
-					"Codetype":this.info.code_type,
-					"Description":this.info.description
-				};
+				if(this.info.code_type == null || this.info.code_type == ""){
+					this.$Message.error('数据不能为空！');
+					return
+				}
 				axios({
 					method: 'POST',
 					url: api.Api.addCodeType,
@@ -142,18 +142,7 @@
 					console.log(error)
 				});
 			},
-			// 点击按钮，控制显示弹框
-			isShowMethod(){
-				this.isShow = true;
-			},
-			// 弹框点击确认
-            ok () {
-                this.$Message.info('点击了确定');
-            },
-            // 弹框点击取消
-            cancel () {
-                this.$Message.info('点击了取消');
-            },
+		
             //获取列表信息
             getList(){
 	            	axios({

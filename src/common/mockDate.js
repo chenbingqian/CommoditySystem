@@ -10,7 +10,7 @@ const vheaderDate = {
           "icon":{"default":"../../static/image/other/journal.svg"},
           "subMenus":[
         		{"routerName":"/xIndex/codeTypeList","name":"数字信息化","code":0,"permissions":[]},
-        		{"routerName":"/xIndex/two","name":"一级菜单1-2","code":0,"permissions":[],"index":3}
+        		{"routerName":"/xIndex/codeList","name":"数据字典","code":0,"permissions":[],"index":3}
         		]
         },
         {

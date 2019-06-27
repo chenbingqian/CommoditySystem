@@ -10,9 +10,14 @@ const Api = {
   	// add codeType 
   	addCodeType:KikiApi+'/codetype/insert',
   	// del codeType
-  	delCodeType:KikiApi+'/codetype/del'
+  	delCodeType:KikiApi+'/codetype/del',
   	
-
+    // get code all list
+    codeList :KikiApi+'/code/list',
+    // insert code
+    insertCode: KikiApi+'/code/insert',
+    // delete code
+    delCode: KikiApi +'/code/del',
 };
 
 export default {

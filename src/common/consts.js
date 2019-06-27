@@ -27,6 +27,7 @@ const APP_NAME = 'application_name'
 /** **************缓存相关end*************************/
 
 const ERROR_CODE = {
+  ERROR: '40000',// 服务异常
   SUCCESS: '10000', // 成功
   INSTANCE_ID_NO_SECURITY_ID: '61011', // instance_id和security_id不匹配
   INSTANCE_ID_NO_ACCESS_TOKEN: '61012', // instance_id和access_token不匹配
