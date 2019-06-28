@@ -214,6 +214,7 @@
     	width:200px;
     }
     .top_box{
+    	width: 100%;
     	float: left;
     }
     .bane_box_sel{
@@ -235,5 +236,4 @@
 		width: 100%;
 		float: left;
 	}
-
 </style>
